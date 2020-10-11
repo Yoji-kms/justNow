@@ -22,7 +22,7 @@ fun agoToText(secondsAgo: Int): String? {
     } else null
 }
 
-fun minutesAgoToText(minutesAgo : Int) = when {
+fun minutesAgoToText(minutesAgo: Int) = when {
     minutesAgo % 10 == 1 && minutesAgo % 100 != 11 -> "$minutesAgo минуту назад"
     (minutesAgo % 10 == 2 && minutesAgo % 100 != 12) ||
             (minutesAgo % 10 == 3 && minutesAgo % 100 != 13) ||
@@ -30,7 +30,7 @@ fun minutesAgoToText(minutesAgo : Int) = when {
     else -> "$minutesAgo минут назад"
 }
 
-fun hoursAgoToText(hoursAgo : Int) = when {
+fun hoursAgoToText(hoursAgo: Int) = when {
     hoursAgo % 10 == 1 && hoursAgo % 100 != 11 -> "$hoursAgo час назад"
     (hoursAgo % 10 == 2 && hoursAgo % 100 != 12) ||
             (hoursAgo % 10 == 3 && hoursAgo % 100 != 13) ||
@@ -39,8 +39,8 @@ fun hoursAgoToText(hoursAgo : Int) = when {
 }
 
 fun printAgo(from: Int, till: Int, step: Int = 1) {
-    for (i: Int in from..till step step) {
-        val agoText = agoToText(i)
+    for (seconds: Int in from..till step step) {
+        val agoText = agoToText(seconds)
         println("был(-а) $agoText")
     }
 }
