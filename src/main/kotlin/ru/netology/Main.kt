@@ -1,7 +1,10 @@
 package ru.netology
 
 fun main() {
-    printAgo(from = 25, till = 26)
+    val seconds = 25
+    val agoText = agoToText(seconds)
+    println("был(-а) $agoText")
+
     printAgo(from = 61, till = 60 * 60, step = 60)
     printAgo(from = 60 * 60 + 1, till = 24 * 60 * 60, step = 60 * 60)
     printAgo(from = 24 * 60 * 60 + 1, till = 5 * 24 * 60 * 60, step = 24 * 60 * 60)
