@@ -3,7 +3,7 @@ package ru.netology
 fun main() {
     val seconds = 25
     val agoText = agoToText(seconds)
-    println("был(-а) $agoText")
+    if (agoText != null) println("был(-а) $agoText") else println("Некорректный ввод!")
 
     printAgo(from = 61, till = 60 * 60, step = 60)
     printAgo(from = 60 * 60 + 1, till = 24 * 60 * 60, step = 60 * 60)
@@ -42,8 +42,10 @@ fun hoursAgoToText(hoursAgo: Int) = when {
 }
 
 fun printAgo(from: Int, till: Int, step: Int = 1) {
-    for (seconds: Int in from..till step step) {
-        val agoText = agoToText(seconds)
-        println("был(-а) $agoText")
-    }
+    if (till >= from && till >= 0) {
+        for (seconds: Int in from..till step step) {
+            val agoText = agoToText(seconds)
+            println("был(-а) $agoText")
+        }
+    }else println("Некорректные параметры цикла!")
 }
